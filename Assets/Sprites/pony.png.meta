@@ -1,0 +1,246 @@
+fileFormatVersion: 2
+guid: 3df71675b80d3d943bbc209a90d886e4
+timeCreated: 1455632376
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: pony_0
+    21300002: pony_1
+    21300004: pony_2
+    21300006: pony_3
+    21300008: pony_4
+    21300010: pony_5
+    21300012: pony_6
+    21300014: pony_7
+    21300016: pony_8
+    21300018: pony_9
+    21300020: pony_10
+    21300022: pony_11
+    21300024: pony_12
+    21300026: pony_13
+    21300028: pony_14
+    21300030: pony_15
+    21300032: pony_16
+    21300034: pony_17
+    21300036: pony_18
+    21300038: pony_19
+    21300040: pony_20
+    21300042: pony_21
+    21300044: pony_22
+    21300046: pony_23
+    21300048: pony_24
+    21300050: pony_25
+    21300052: pony_26
+    21300054: pony_27
+    21300056: pony_28
+    21300058: pony_29
+    21300060: pony_30
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 200
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: pony_0
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 345
+        width: 169
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pony_1
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 345
+        width: 170
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pony_2
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 344
+        width: 170
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pony_3
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 338
+        width: 162
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pony_4
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 170
+        width: 169
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pony_5
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 177
+        width: 170
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pony_6
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 177
+        width: 170
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pony_7
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 176
+        width: 170
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pony_8
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 176
+        width: 170
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pony_9
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 175
+        width: 170
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pony_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 169
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pony_11
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 4
+        width: 170
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pony_12
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 0
+        width: 170
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pony_13
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 2
+        width: 172
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pony_14
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 7
+        width: 170
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pony_15
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 5
+        width: 170
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
