@@ -4,31 +4,54 @@ using System.Collections;
 public class Pony : MonoBehaviour, ICollectable {
 
 	public float runSpeed;
-	public float rotateSpeed;
 
 	private Vector3 collectorPosition;
 	private Vector3 vectorToRun;
 	private bool isRunning;
+	private bool inSafeZone;
 	private float zAngle;
-	private Quaternion q;
-
+	private float timer;
+	private Animator animator;
+	
 	//interface methods
+	//receiving position of an object to follow if not in safe zone
 	public void Taken(Vector3 _targetPosition){
-		collectorPosition = _targetPosition;
-		isRunning = true;
+		if (!inSafeZone){
+			collectorPosition = _targetPosition;
+			isRunning = true;
+			animator.SetFloat("speed", 1f);
+		}
 	}
+	//stop if out of range
 	public void OutOfRange(){
 		isRunning = false;
+		animator.SetFloat("speed", 0f);
+	}
+	//translate to the center of safe zone if there
+	public void InSafeZone(Vector3 _safeZonePosition){
+		timer += Time.deltaTime;
+		inSafeZone = true;
+		if (inSafeZone){
+			collectorPosition = _safeZonePosition;
+			isRunning = true;
+			animator.SetFloat("speed", 1f);
+		}
+		if (timer > 1f){
+			isRunning = false;
+			animator.SetFloat("speed", 0f);
+		}
+	}
+
+	void Start(){
+		animator = GetComponent<Animator>();
+		timer = 0f;
 	}
 
 	void Update () {
-		//moving and rotating the pony smoothly towards triggered dog
+		//moving the pony towards triggered dog
 		if (isRunning){
 			vectorToRun = collectorPosition - transform.position;
-			zAngle = Mathf.Atan2(vectorToRun.y, vectorToRun.x) * Mathf.Rad2Deg;
-			q = Quaternion.AngleAxis(zAngle - 180, Vector3.forward);
-			transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * rotateSpeed);
-			transform.Translate(Vector2.left * Time.deltaTime * runSpeed);
+			transform.Translate(vectorToRun * Time.deltaTime * runSpeed);
 		}
 	}
 }

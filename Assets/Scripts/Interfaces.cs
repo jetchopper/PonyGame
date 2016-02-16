@@ -10,4 +10,9 @@ public interface ISelectable {
 public interface ICollectable{
 	void Taken(Vector3 targetPosition);
 	void OutOfRange();
+	void InSafeZone(Vector3 safeZonePosition);
+}
+
+public interface ISafeZone{
+
 }

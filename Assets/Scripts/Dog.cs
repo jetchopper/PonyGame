@@ -14,9 +14,11 @@ public class Dog : MonoBehaviour, ISelectable {
 	private Quaternion q;
 
 	//interface methods
+	//select or deselect object
 	public void Selected(){
 		selected = selected ? false : true;
 	}
+	//set point to follow
 	public void SetTouchPoint(Vector2 touchPoint){
 		if (selected){
 			pointToRun = (Vector3)touchPoint;
@@ -34,7 +36,7 @@ public class Dog : MonoBehaviour, ISelectable {
 			transform.Translate(Vector2.left * Time.deltaTime * runSpeed);
 		}
 	}
-
+	
 	//calling for magneting ICollectable items (ponys)
 	public void OnTriggerStay2D(Collider2D c){
 		if (c.GetComponent<ICollectable>() != null){
