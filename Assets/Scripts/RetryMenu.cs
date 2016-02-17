@@ -11,6 +11,7 @@ public class RetryMenu : MonoBehaviour {
 	}
 	//button method
 	public void Retry(){
+		Pony.ponyCounter = 0;
 		Application.LoadLevel(0);
 	}
 }
