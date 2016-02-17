@@ -48,9 +48,9 @@ public class Pony : MonoBehaviour, ICollectable {
 	}
 
 	void Update () {
-		//moving the pony towards triggered dog
+		//moving the pony towards collector position (dog or safe zone)
 		if (isRunning){
-			vectorToRun = collectorPosition - transform.position;
+			vectorToRun = (collectorPosition - transform.position).normalized;
 			transform.Translate(vectorToRun * Time.deltaTime * runSpeed);
 		}
 	}

@@ -12,7 +12,3 @@ public interface ICollectable{
 	void OutOfRange();
 	void InSafeZone(Vector3 safeZonePosition);
 }
-
-public interface ISafeZone{
-
-}

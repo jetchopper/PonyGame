@@ -17,6 +17,7 @@ public class Dog : MonoBehaviour, ISelectable {
 	//select or deselect object
 	public void Selected(){
 		selected = selected ? false : true;
+		GetComponentInChildren<SpriteRenderer>().enabled = selected ? true : false;
 	}
 	//set point to follow
 	public void SetTouchPoint(Vector2 touchPoint){
@@ -28,6 +29,7 @@ public class Dog : MonoBehaviour, ISelectable {
 
 	void Update () {
 		//moving and rotating the dog smoothly towards given point
+		//just ofr better performance the dog will be running circles
 		if (isRunning){
 			vectorToRun = pointToRun - transform.position;
 			zAngle = Mathf.Atan2(vectorToRun.y, vectorToRun.x) * Mathf.Rad2Deg;
