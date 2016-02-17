@@ -5,6 +5,8 @@ public class Pony : MonoBehaviour, ICollectable {
 
 	public float runSpeed;
 
+	public static int ponyCounter = 0;
+
 	private Vector3 collectorPosition;
 	private Vector3 vectorToRun;
 	private bool isRunning;
@@ -27,7 +29,7 @@ public class Pony : MonoBehaviour, ICollectable {
 		isRunning = false;
 		animator.SetFloat("speed", 0f);
 	}
-	//translate to the center of safe zone if there
+	//translate to the center of safe zone if there and disable pony
 	public void InSafeZone(Vector3 _safeZonePosition){
 		timer += Time.deltaTime;
 		inSafeZone = true;
@@ -36,14 +38,18 @@ public class Pony : MonoBehaviour, ICollectable {
 			isRunning = true;
 			animator.SetFloat("speed", 1f);
 		}
+		//disabling pony
 		if (timer > 1f){
 			isRunning = false;
 			animator.SetFloat("speed", 0f);
+			GetComponent<CircleCollider2D>().enabled = false;
+			GetComponent<Pony>().enabled = false;
 		}
 	}
 
 	void Start(){
 		animator = GetComponent<Animator>();
+		ponyCounter++;
 		timer = 0f;
 	}
 

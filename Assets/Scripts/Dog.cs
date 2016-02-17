@@ -5,7 +5,7 @@ public class Dog : MonoBehaviour, ISelectable {
 
 	public float runSpeed;
 	public float rotateSpeed;
-	
+
 	private bool selected;
 	private bool isRunning;
 	private Vector3 pointToRun;
@@ -19,7 +19,7 @@ public class Dog : MonoBehaviour, ISelectable {
 		selected = selected ? false : true;
 		GetComponentInChildren<SpriteRenderer>().enabled = selected ? true : false;
 	}
-	//set point to follow
+	//set point to follow if selected
 	public void SetTouchPoint(Vector2 touchPoint){
 		if (selected){
 			pointToRun = (Vector3)touchPoint;
@@ -29,7 +29,7 @@ public class Dog : MonoBehaviour, ISelectable {
 
 	void Update () {
 		//moving and rotating the dog smoothly towards given point
-		//just ofr better performance the dog will be running circles
+		//just for better performance the dog will be running circles
 		if (isRunning){
 			vectorToRun = pointToRun - transform.position;
 			zAngle = Mathf.Atan2(vectorToRun.y, vectorToRun.x) * Mathf.Rad2Deg;
@@ -39,7 +39,7 @@ public class Dog : MonoBehaviour, ISelectable {
 		}
 	}
 	
-	//calling for magneting ICollectable items (ponys)
+	//calling for magneting ICollectable items (ponys, bonuses)
 	public void OnTriggerStay2D(Collider2D c){
 		if (c.GetComponent<ICollectable>() != null){
 			c.GetComponent<ICollectable>().Taken(transform.position);

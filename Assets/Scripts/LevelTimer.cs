@@ -6,21 +6,40 @@ public class LevelTimer : MonoBehaviour {
 
 	public float initLevelTime;
 
+	public static float currentLevelTime;
+
+	private float buffTime;
 	private Text text;
-	
+	private bool isRunning;
+
+	//GUI timer
 	void Start () {
-		initLevelTime += 1f;
+		buffTime = 0f;
+		currentLevelTime = initLevelTime;
 		text = GetComponent<Text>();
-		text.text = "TIME " + (int)initLevelTime;
+		text.text = "TIME " + (int)currentLevelTime;
+		isRunning = true;
 	}
 	
-	//level countdown and retry screen
+	//updating GUI timer per second
 	void Update () {
-		initLevelTime -= Time.deltaTime;
-		text.text = "TIME " + (int)initLevelTime;
-		if (initLevelTime < 1f){
-			Debug.Log ("lost");
+		if (isRunning){
+			buffTime += Time.deltaTime;
+			if (buffTime > 1f){
+				currentLevelTime--;
+				OnScreenTimer();
+				buffTime -= 1f;
+			}
+		}
+	}
+	//GUI timer
+	private void OnScreenTimer(){
+		text.text = "TIME " + (int)currentLevelTime;
+		if (currentLevelTime < 1f){
+			RetryMenu retryMenu = FindObjectOfType(typeof(RetryMenu)) as RetryMenu;
+			retryMenu.ActivateRetryMenu();
 			text.text = "";
+			isRunning = false;
 		}
 	}
 }

@@ -36,16 +36,20 @@ public class SafeZone : MonoBehaviour {
 		}
 	}
 	//counting ponies setting countdown for bonus
+	//counting all icollectable
+	//checking if all icollectables collected
 	public void OnTriggerEnter2D(Collider2D c){
 		if (c.GetComponent<ICollectable>() != null){
 			ponyCount++;
-			Debug.Log(ponyCount);
 			totalPonyCount++;
+			if (totalPonyCount == Pony.ponyCounter){
+				LevelTimer.currentLevelTime = 0;
+			}
 			bonusTimer = 1f;
 			startCountdown = true;
 		}
 	}
-
+	//calling icollectable to move in center of safe zone
 	public void OnTriggerStay2D(Collider2D c){
 		if (c.GetComponent<ICollectable>() != null){
 			c.GetComponent<ICollectable>().InSafeZone(transform.position);

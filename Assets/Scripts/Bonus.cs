@@ -5,7 +5,7 @@ public class Bonus : MonoBehaviour, ICollectable {
 
 	public float timeToDie;
 	public float runSpeed;
-	public float bonusTime;
+	public float bonusTimeValue;
 
 	private bool isRunning;
 	private Vector3 collectorPosition;
@@ -21,7 +21,7 @@ public class Bonus : MonoBehaviour, ICollectable {
 	public void InSafeZone(Vector3 safeZonePosition){
 	}
 
-	void Awake () {
+	void Start () {
 		Destroy(gameObject, timeToDie);
 	}
 
@@ -31,9 +31,8 @@ public class Bonus : MonoBehaviour, ICollectable {
 			vectorToRun = collectorPosition - transform.position;
 			transform.Translate(vectorToRun * Time.deltaTime * runSpeed);
 			if (Vector3.Distance(transform.position, collectorPosition) < 0.5f){
-				//give bonus (calling level time)
-				LevelTimer levelTimer = FindObjectOfType(typeof(LevelTimer)) as LevelTimer;
-				levelTimer.initLevelTime += bonusTime;
+				//give bonus (calling level time to add bonus time)
+				LevelTimer.currentLevelTime += bonusTimeValue;
 				Destroy(gameObject);
 			}
 		}

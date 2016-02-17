@@ -5,9 +5,7 @@ public class InputController : MonoBehaviour {
 
 	private RuntimePlatform runPlatform;
 	private bool touch;
-
 	private Vector2 screenPointPosition;
-
 	private Transform selectedTransform;
 
 	void Start () {
@@ -31,7 +29,12 @@ public class InputController : MonoBehaviour {
 				SelectOrMove(screenPointPosition);
 			}
 		}
+		//quit app
+		if (Input.GetKey("escape")){
+			Application.Quit();
+		}
 	}
+
 	//select if selectable, otherwise move selected if selected :)
 	private void SelectOrMove(Vector2 _screenPointPosition){
 		Vector2 worldPointPosition = new Vector2(Camera.main.ScreenToWorldPoint(_screenPointPosition).x, 
