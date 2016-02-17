@@ -10,6 +10,7 @@ public class Bonus : MonoBehaviour, ICollectable {
 	private bool isRunning;
 	private Vector3 collectorPosition;
 	private Vector3 vectorToRun;
+	private Transform _transform;
 
 	//interface methods
 	public void Taken(Vector3 _targetPosition){
@@ -23,14 +24,15 @@ public class Bonus : MonoBehaviour, ICollectable {
 
 	void Start () {
 		Destroy(gameObject, timeToDie);
+		_transform = transform;
 	}
 
 	void Update () {
 		//moving bonus towards collector position (dog)
 		if (isRunning){
-			vectorToRun = collectorPosition - transform.position;
-			transform.Translate(vectorToRun * Time.deltaTime * runSpeed);
-			if (Vector3.Distance(transform.position, collectorPosition) < 0.5f){
+			vectorToRun = collectorPosition - _transform.position;
+			_transform.Translate(vectorToRun * Time.deltaTime * runSpeed);
+			if (Vector3.Distance(_transform.position, collectorPosition) < 0.5f){
 				//give bonus (calling level time to add bonus time)
 				LevelTimer.currentLevelTime += bonusTimeValue;
 				Destroy(gameObject);

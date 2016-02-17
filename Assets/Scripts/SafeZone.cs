@@ -9,11 +9,13 @@ public class SafeZone : MonoBehaviour {
 	private int ponyCount;
 	private int totalPonyCount;
 	private bool startCountdown;
+	private Transform _transform;
 	
 	void Start(){
 		bonusTimer = 0f;
 		ponyCount = 0;
 		totalPonyCount = 0;
+		_transform = transform;
 	}
 
 	void Update(){
@@ -52,7 +54,7 @@ public class SafeZone : MonoBehaviour {
 	//calling icollectable to move in center of safe zone
 	public void OnTriggerStay2D(Collider2D c){
 		if (c.GetComponent<ICollectable>() != null){
-			c.GetComponent<ICollectable>().InSafeZone(transform.position);
+			c.GetComponent<ICollectable>().InSafeZone(_transform.position);
 		}
 	}
 }

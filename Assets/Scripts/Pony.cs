@@ -14,6 +14,7 @@ public class Pony : MonoBehaviour, ICollectable {
 	private float zAngle;
 	private float timer;
 	private Animator animator;
+	private Transform _transform;
 	
 	//interface methods
 	//receiving position of an object to follow if not in safe zone
@@ -48,6 +49,7 @@ public class Pony : MonoBehaviour, ICollectable {
 	}
 
 	void Start(){
+		_transform = transform;
 		animator = GetComponent<Animator>();
 		ponyCounter++;
 		timer = 0f;
@@ -56,8 +58,8 @@ public class Pony : MonoBehaviour, ICollectable {
 	void Update () {
 		//moving the pony towards collector position (dog or safe zone)
 		if (isRunning){
-			vectorToRun = (collectorPosition - transform.position).normalized;
-			transform.Translate(vectorToRun * Time.deltaTime * runSpeed);
+			vectorToRun = (collectorPosition - _transform.position).normalized;
+			_transform.Translate(vectorToRun * Time.deltaTime * runSpeed);
 		}
 	}
 }
